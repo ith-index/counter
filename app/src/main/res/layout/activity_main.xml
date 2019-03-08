@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineTopMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineBottomMargin"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.95"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineLeftMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.05"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guidelineRightMargin"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.95"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTopMargin"
+            app:layout_constraintBottom_toTopOf="@+id/buttonReset"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+            android:id="@+id/textViewCurrentValue" tools:text="100" android:gravity="center"
+            app:autoSizeTextType="uniform" app:autoSizeMaxTextSize="570sp" android:maxLines="1"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.0"
+            android:layout_marginBottom="8dp"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDecrement"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/buttonReset"
+            app:layout_constraintBaseline_toBaselineOf="@+id/buttonReset" android:text="@string/label_decrement"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonReset"
+            app:layout_constraintStart_toEndOf="@+id/buttonDecrement" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/buttonIncrement" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineBottomMargin" android:text="@string/label_reset"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonIncrement"
+            app:layout_constraintStart_toEndOf="@+id/buttonReset" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBaseline_toBaselineOf="@+id/buttonReset"
+            android:text="@string/label_increment"/>
+
+</android.support.constraint.ConstraintLayout>
